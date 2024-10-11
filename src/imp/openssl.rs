@@ -297,6 +297,8 @@ impl TlsConnector {
             }
         }
 
+        connector.set_cipher_list("ECDHE-ECDSA-AES128-CCM8")?;
+
         #[cfg(feature = "alpn")]
         {
             if !builder.alpn.is_empty() {
